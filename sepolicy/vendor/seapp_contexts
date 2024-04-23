@@ -3,8 +3,16 @@ user=_app seinfo=platform name=com.android.pixellogger domain=logger_app type=ap
 user=_app seinfo=platform name=com.android.ramdump domain=ramdump_app type=app_data_file levelFrom=all
 user=_app seinfo=mds name=com.google.mds domain=mds_app type=app_data_file levelFrom=all
 
-#TODO Remove user "system" when b/63588267 is resolved
-user=system seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=system_app_data_file
+user=_app isPrivApp=true seinfo=platform name=org.codeaurora.ims domain=qtelephony type=app_data_file levelFrom=all
+user=_app seinfo=platform name=com.qualcomm.qti.devicestatisticsservice domain=qtelephony type=app_data_file levelFrom=all
+user=_app seinfo=platform name=com.qualcomm.qti.telephonyservice domain=qtelephony type=app_data_file levelFrom=all
+user=_app seinfo=platform name=com.qti.phone domain=qtelephony type=app_data_file levelFrom=all
+
+#TODO(b/126137625): moving dataservice app from system to radio process
+#user=radio seinfo=platform name=.dataservices domain=dataservice_app type=radio_data_file
+user=system seinfo=platform name=.dataservices domain=dataservice_app type=system_app_data_file levelFrom=user
+
+user=_app seinfo=platform name=.qtidataservices domain=qtidataservices_app type=app_data_file levelFrom=all
 
 # The default domain for tango_core / arcore process
 user=_app seinfo=tango name=com.google.tango* domain=tango_core type=app_data_file levelFrom=user
@@ -33,3 +41,10 @@ user=_app isPrivApp=true seinfo=platform name=com.google.android.connectivitymon
 
 #Domain for omadm
 user=_app isPrivApp=true seinfo=platform name=com.android.omadm.service domain=omadm_app type=app_data_file levelFrom=all
+
+# Domain for grilservice
+user=_app isPrivApp=true name=com.google.android.grilservice domain=grilservice_app levelFrom=all
+
+user=_app seinfo=platform name=com.qualcomm.qti.services.secureui* domain=secure_ui_service_app levelFrom=all
+
+user=radio isPrivApp=true seinfo=platform name=com.google.RilConfigService domain=ril_config_service_app type=app_data_file levelFrom=all

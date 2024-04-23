@@ -188,9 +188,20 @@ PRODUCT_PACKAGES += \
 
 # Radio Hal
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.1.vendor \
-    android.hardware.radio.config@1.0 \
+    android.hardware.radio.config@1.0.vendor:64 \
+    android.hardware.radio.config@1.1.vendor:64 \
+    android.hardware.radio.config@1.2.vendor:64 \
+    android.hardware.radio.deprecated@1.0.vendor:64 \
+    android.hardware.radio@1.2.vendor:64 \
+    android.hardware.radio@1.3.vendor:64 \
+    android.hardware.radio@1.4.vendor:64 \
+    android.hardware.radio@1.5.vendor:64 \
+    android.hardware.secure_element@1.1.vendor:64 \
+    android.hardware.secure_element@1.2.vendor:64 \
     libxml2
+
+PRODUCT_PACKAGES += \
+    hardware.google.bluetooth.bt_channel_avoidance@1.0.vendor
 
 # Audio fluence, ns, aec property, voice and media volume steps
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -244,8 +255,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.always_send_plmn=false\
     persist.rcs.supported=1
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.telephony.block_binder_thread_on_incoming_calls=false
+#PRODUCT_PRODUCT_PROPERTIES += \
+#    ro.telephony.block_binder_thread_on_incoming_calls=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
@@ -812,3 +823,37 @@ include device/google/gs-common/thermal/thermal_hal/device.mk
 
 # power HAL
 -include hardware/google/pixel/power-libperfmgr/aidl/device.mk
+
+PRODUCT_PACKAGES += \
+    libavservices_minijail_vendor:32 \
+    libavservices_minijail.vendor:64 \
+
+# Privapp Whitelist
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/system_ext-privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist.xml
+
+# Telephony
+PRODUCT_PACKAGES += \
+    qti-telephony-hidl-wrapper \
+    qti-telephony-hidl-wrapper-prd \
+    qti_telephony_hidl_wrapper.xml \
+    qti_telephony_hidl_wrapper_prd.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml
+
+
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
+# VNDK FWK detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti.vendor

@@ -18,8 +18,20 @@ allow rmt_storage sysfs_rmtfs:dir search;
 allow rmt_storage sysfs_rmtfs:file r_file_perms;
 allow rmt_storage sysfs_rmtfs:dir search;
 
+allow rmt_storage sysfs_msm_subsys:dir search;
+
 allow rmt_storage debugfs_rmt_storage:dir search;
 allow rmt_storage debugfs_rmt_storage:file w_file_perms;
 
 allow rmt_storage self:socket create_socket_perms;
 allowxperm rmt_storage self:socket ioctl IPC_ROUTER_IOCTL_BIND_CONTROL_PORT;
+
+get_prop(rmt_storage, radio_control_prop)
+set_prop(rmt_storage, ctl_vendor_rmt_storage_prop)
+
+allow rmt_storage kmsg_device:chr_file w_file_perms;
+
+allow rmt_storage modem_fdr_file:dir rw_dir_perms;
+allow rmt_storage modem_fdr_file:file create_file_perms;
+
+dontaudit rmt_storage kernel:system module_request;

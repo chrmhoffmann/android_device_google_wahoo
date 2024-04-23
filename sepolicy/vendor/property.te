@@ -27,3 +27,11 @@ type vendor_wifi_sniffer_prop, property_type;
 
 # fingerprint
 type vendor_fingerprint_prop, property_type;
+
+#imsrcsservice
+vendor_internal_prop(ctl_vendor_imsrcsservice_prop)
+
+
+vendor_internal_prop(per_mgr_state_prop)
+vendor_internal_prop(vendor_xlat_prop)
+vendor_internal_prop(ctl_vendor_rmt_storage_prop)

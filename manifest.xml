@@ -202,17 +202,28 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.google.radioext</name>
+        <transport>hwbinder</transport>
+        <version>1.3</version>
+        <interface>
+            <name>IRadioExt</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
-        <interface>
-            <name>IRadio</name>
-            <instance>slot1</instance>
-        </interface>
-        <interface>
-            <name>ISap</name>
-            <instance>slot1</instance>
-        </interface>
+        <fqname>@1.2::ISap/slot1</fqname>
+        <fqname>@1.4::IRadio/slot1</fqname>
+    </hal>
+    <hal format="hidl">
+      <name>android.hardware.radio.config</name>
+      <transport>hwbinder</transport>
+      <version>1.1</version>
+      <interface>
+        <name>IRadioConfig</name>
+        <instance>default</instance>
+      </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.renderscript</name>
@@ -273,16 +284,25 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>com.qualcomm.qti.ims.radio</name>
+        <name>vendor.qti.hardware.radio.ims</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.5</version>
         <interface>
             <name>IImsRadio</name>
             <instance>imsradio0</instance>
         </interface>
     </hal>
     <hal format="hidl">
-        <name>com.qualcomm.qti.qcril.qcrilhook</name>
+        <name>vendor.qti.hardware.radio.lpa</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUimLpa</name>
+            <instance>UimLpa0</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.radio.qcrilhook</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
@@ -291,25 +311,97 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>com.qualcomm.qti.imsrtpservice</name>
+        <name>vendor.qti.hardware.radio.uim</name>
+        <transport>hwbinder</transport>
+        <version>1.2</version>
+        <interface>
+            <name>IUim</name>
+            <instance>Uim0</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.radio.uim_remote_client</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
+        <interface>
+            <name>IUimRemoteServiceClient</name>
+            <instance>uimRemoteClient0</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.radio.uim_remote_server</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUimRemoteServiceServer</name>
+            <instance>uimRemoteServer0</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.tui_comm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITuiComm</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.imsrtpservice</name>
+        <transport>hwbinder</transport>
+        <version>3.0</version>
         <interface>
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>
         </interface>
     </hal>
     <hal format="hidl">
-        <name>com.qualcomm.qti.uceservice</name>
+        <name>vendor.qti.ims.factory</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
+        <interface>
+            <name>IImsFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.data.factory</name>
+        <transport>hwbinder</transport>
+        <version>2.2</version>
+        <interface>
+            <name>IFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.ims.callinfo</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.qualcomm.qti.imscmservice</name>
+        <transport>hwbinder</transport>
+        <version>2.2</version>
+        <interface>
+             <name>IImsCmService</name>
+             <instance>qti.ims.connectionmanagerservice</instance>
+       </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.qualcomm.qti.uceservice</name>
+        <transport>hwbinder</transport>
+        <version>2.3</version>
         <interface>
             <name>IUceService</name>
             <instance>com.qualcomm.qti.uceservice</instance>
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.qcril.am</name>
+        <name>vendor.qti.hardware.radio.am</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
@@ -318,21 +410,21 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>com.quicinc.cne.server</name>
+        <name>vendor.qti.hardware.radio.qtiradio</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>IServer</name>
-            <instance>cnd</instance>
+            <name>IQtiRadio</name>
+            <instance>slot1</instance>
         </interface>
     </hal>
     <hal format="hidl">
-        <name>com.quicinc.cne.api</name>
+        <name>vendor.qti.hardware.radio.qtiradio</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>2.4</version>
         <interface>
-            <name>IApiService</name>
-            <instance>cnd</instance>
+            <name>IQtiRadio</name>
+            <instance>slot1</instance>
         </interface>
     </hal>
 </manifest>

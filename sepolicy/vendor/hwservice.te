@@ -1,6 +1,14 @@
-type vnd_ims_radio_hwservice, hwservice_manager_type, vendor_hwservice_type;
-type vnd_qcrilhook_hwservice, hwservice_manager_type, vendor_hwservice_type;
-type vnd_atcmdfwd_hwservice, hwservice_manager_type, vendor_hwservice_type;
+type hal_iwlan_hwservice, hwservice_manager_type, vendor_hwservice_type;
+type hal_dataconnection_hwservice, hwservice_manager_type, vendor_hwservice_type;
+type hal_datafactory_hwservice, hwservice_manager_type, vendor_hwservice_type;
 type hal_imsrtp_hwservice, hwservice_manager_type, vendor_hwservice_type;
+type hal_imscallinfo_hwservice, hwservice_manager_type, vendor_hwservice_type;
+type hal_imsfactory_hwservice, hwservice_manager_type, protected_hwservice, vendor_hwservice_type;
+type hal_imsrcsd_hwservice, hwservice_manager_type, vendor_hwservice_type;
+type hal_mwqemadapter_hwservice, hwservice_manager_type, protected_hwservice;
+type hal_radioext_hwservice, hwservice_manager_type, vendor_hwservice_type;
 type nxpnfc_hwservice, hwservice_manager_type, vendor_hwservice_type;
 type nxpese_hwservice, hwservice_manager_type, vendor_hwservice_type;
+type hal_wifi_ext_hwservice, hwservice_manager_type, vendor_hwservice_type;
+type hal_wifi_ext_service, service_manager_type, hal_service_type;
+type hal_tui_comm_hwservice, hwservice_manager_type, vendor_hwservice_type;

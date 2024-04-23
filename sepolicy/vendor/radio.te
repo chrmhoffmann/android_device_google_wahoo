@@ -9,8 +9,6 @@ allow radio vendor_framework_file:file r_file_perms;
 allow radio vendor_framework_file:dir search;
 
 hwbinder_use(radio)
-allow radio vnd_ims_radio_hwservice:hwservice_manager find;
-allow radio vnd_qcrilhook_hwservice:hwservice_manager find;
 allow radio hal_imsrtp_hwservice:hwservice_manager find;
 
 allow radio {
@@ -36,3 +34,7 @@ dontaudit radio sysfs_diag:dir search;
 allow radio proc_cmdline:file r_file_perms;
 
 get_prop(radio, vendor_radio_prop)
+
+binder_call(radio, hal_imsrtp)
+binder_call(radio, hal_rcsservice)
+allow radio hal_imsrcsd_hwservice:hwservice_manager find;
